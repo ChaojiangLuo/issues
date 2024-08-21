@@ -1,4 +1,20 @@
-# Issue: Screen get stuck, blocked at dri3_wait_for_event_locked
+
+# Environment
+Uniontech OS(Deepin) V20
+KDE:5.27.2
+Qt:5.11.3
+Mesa:19.2.6
+
+# Test
+For this issue, has no simple steps to reproduce it
+We run a pressure test, something like this:
+* start some apps
+* input Alt + Tab to start Tabbox
+* change the current window
+* wait sometime and try again
+
+# Issue
+Screen get stuck, blocked at dri3_wait_for_event_locked
 ```
 #0  0x000000fff1bf361c in __GI___poll (fds=0xfffbd42890, nfds=1, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:41
 #1  0x000000ffe7602fe0 in dri3_wait_for_event_locked (draw=0x129cc0cf8, full_sequence=0x0) at ../src/loader/loader_dri3_helper.c:563
